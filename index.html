@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cripty by Mattedev</title>
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+        body { background-color: #121212; color: #fff; line-height: 1.6; }
+        header { padding: 20px; text-align: center; background-color: #1f1f1f; }
+        header img { width: 80px; height: 80px; object-fit: contain; margin-bottom: 10px; }
+        header h1 { font-size: 28px; margin-bottom: 5px; }
+        nav { margin-top: 10px; }
+        nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: 500; }
+        nav a:hover { color: #00bfff; }
+        .hero { text-align: center; padding: 60px 20px; }
+        .hero h2 { font-size: 32px; margin-bottom: 20px; }
+        .hero p { font-size: 18px; margin-bottom: 30px; color: #aaa; }
+        .cta { padding: 10px 25px; background-color: #00bfff; color: #fff; border: none; border-radius: 8px; font-size: 16px; cursor: pointer; }
+        .cta:hover { background-color: #009acd; }
+        section { padding: 60px 20px; max-width: 1000px; margin: auto; }
+        h3 { font-size: 24px; margin-bottom: 15px; text-align: center; }
+        .features { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 20px; margin-top: 30px; }
+        .feature { background-color: #1f1f1f; padding: 20px; border-radius: 12px; flex: 1 1 250px; text-align: center; }
+        .feature h4 { margin-bottom: 10px; }
+        footer { background-color: #1f1f1f; text-align: center; padding: 20px; color: #aaa; margin-top: 40px; }
+        .disclaimer { display: none; position: fixed; top:0; left:0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.95); color: #fff; justify-content: center; align-items: center; z-index: 9999; }
+        .disclaimer-content { background-color: #222; padding: 30px; border-radius: 12px; max-width: 400px; text-align: center; }
+        .disclaimer button { margin: 10px; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; }
+        .accept { background-color: #00bfff; color: #fff; }
+        .decline { background-color: #555; color: #fff; }
+        .checkbox { margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<header>
+    <img src="logo.png" alt="Cripty Logo" id="logo">
+    <h1>Cripty by Mattedev</h1>
+    <nav>
+        <a href="#features">Caratteristiche</a>
+        <a href="#download">Download</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contatti</a>
+        <a href="terms.html">Termini di Servizio</a>
+    </nav>
+</header>
+
+<div class="hero">
+    <h2>Cripta i tuoi file in sicurezza</h2>
+    <p>Proteggi i tuoi dati personali con un software semplice e sicuro, progettato solo per i tuoi file.</p>
+    <button class="cta" onclick="scrollToSection('download')">Scarica ora</button>
+</div>
+
+<section id="features">
+    <h3>Caratteristiche principali</h3>
+    <div class="features">
+        <div class="feature">
+            <h4>Sicuro e Privato</h4>
+            <p>Cripty utilizza AES-256, criptando i tuoi file in modo sicuro. (ATTENZIONE! la password è irrecuperabile!)</p>
+        </div>
+        <div class="feature">
+            <h4>Tutto ciò che vuoi</h4>
+            <p>Protegge i file nella stessa cartella dell'eseguibile, usare con attenzione; non criptare file di sistema.</p>
+        </div>
+        <div class="feature">
+            <h4>Facile da usare</h4>
+            <p>Interfaccia semplice: Cripta e Decripta in pochi click, senza complicazioni.</p>
+        </div>
+        <div class="feature">
+            <h4>Nessuna raccolta dati</h4>
+            <p>Non inviamo file o dati personali. Tutto rimane sul tuo computer.</p>
+        </div>
+    </div>
+</section>
+
+<section id="download">
+    <h3>Download</h3>
+    <p style="text-align:center;">Scarica Cripty per Windows:</p>
+    <div style="text-align:center;">
+        <button class="cta">Scarica Cripty.exe</button>
+    </div>
+</section>
+
+<section id="about">
+    <h3>Chi siamo</h3>
+    <p style="text-align:center;">Cripty è un progetto di Mattedev, creato per proteggere i file personali in modo sicuro e semplice.</p>
+</section>
+
+<section id="contact">
+    <h3>Contatti</h3>
+    <p style="text-align:center;">Visita il nostro sito ufficiale o scrivici per qualsiasi informazione:</p>
+    <p style="text-align:center;"><a href="https://mattedev.aurastudioitalia.it" style="color:#00bfff;">Mattedev.aurastudioitalia.it</a></p>
+</section>
+
+<footer>
+    &copy; 2025 Mattedev. Tutti i diritti riservati.
+</footer>
+
+<!-- Disclaimer Modal -->
+<div class="disclaimer" id="disclaimer">
+    <div class="disclaimer-content">
+        <h3>DISCLAIMER</h3>
+        <p>Cripty è uno strumento per criptare SOLO i tuoi file. L'autore non si assume responsabilità per usi impropri. È vietato l'uso su file altrui o per scopi illeciti. Rifletti sull'uso di questo strumento, fai attenzione a non criptare file di sistema. la password è IRRECUPERABILE, sceglila con cervello.</p>
+        <label class="checkbox">
+            <input type="checkbox" id="dontShow"> Non mostrare più questo messaggio
+        </label><br>
+        <button class="accept" onclick="acceptDisclaimer()">Ho letto, capito ed accettato.</button>
+        <button class="decline" onclick="declineDisclaimer()">Esci</button>
+    </div>
+</div>
+
+<script>
+    function scrollToSection(id) {
+        document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Gestione disclaimer
+    window.onload = function() {
+        if(!localStorage.getItem('disclaimerAccepted')){
+            document.getElementById('disclaimer').style.display = 'flex';
+        }
+    }
+
+    function acceptDisclaimer(){
+        if(document.getElementById('dontShow').checked){
+            localStorage.setItem('disclaimerAccepted', 'true');
+        }
+        document.getElementById('disclaimer').style.display = 'none';
+    }
+
+    function declineDisclaimer(){
+        window.close();
+    }
+</script>
+
+</body>
+</html>
